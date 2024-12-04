@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void ucitaj(char niz[]){
+void ucitaj(char niz[]){  //function that loads the lines
 
     int i=0;
     char c;
@@ -14,7 +14,7 @@ void ucitaj(char niz[]){
 
 }
 
-int copy(char niz[],char niz2[]){
+int copy(char niz[],char niz2[]){   //function that finds out the length of each line and store the longest line and its length
 
     int duzina=0,maxduzina=0,i=0,n=0,index1;
 
@@ -25,20 +25,20 @@ int copy(char niz[],char niz2[]){
 
         n++;
 
-        if(niz[i] == '\n'){
+        if(niz[i] == '\n'){  //when we come to the end of line store length and reset counter
             duzina = n;
             n=0;
         }
 
-        if(duzina > maxduzina){
+        if(duzina > maxduzina){   //check if length is the longest if it is store it
             maxduzina=duzina;
-            index1=i-duzina;
+            index1=i-duzina;  // store the starting index in array of the said line
         }
         
         i++;
     }
 
-    for(int k=0;k<maxduzina;k++){
+    for(int k=0;k<maxduzina;k++){ //copy the longest line into buffer array
         niz2[k]=niz[k+index1];
     }
 
